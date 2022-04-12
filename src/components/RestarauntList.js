@@ -1,6 +1,9 @@
 import React from 'react';
 
-export const RestarauntList = () => {
+export const RestarauntList = ({ loadRestaurants }) => {
+  React.useEffect(() => {
+    loadRestaurants();
+  }, [loadRestaurants]);
   return <div>RestarauntList</div>;
 };
 
