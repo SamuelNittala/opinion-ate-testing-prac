@@ -1,12 +1,12 @@
 import { render } from '@testing-library/react';
-import { RestarauntList } from '../RestarauntList';
+import { RestaurantList } from '../RestaurantList';
 
 describe('Restaurant List', () => {
   it('should load restaurants on first render', () => {
     const loadRestaurants = jest.fn().mockName('loadRestaurants');
     const restaurants = [];
     render(
-      <RestarauntList
+      <RestaurantList
         loadRestaurants={loadRestaurants}
         restaurants={restaurants}
       />,
@@ -21,7 +21,7 @@ describe('Restaurant List', () => {
       { id: 2, name: 'Pizza Place' },
     ];
     const { queryByText } = render(
-      <RestarauntList loadRestaurants={noop} restaurants={restaurants} />,
+      <RestaurantList loadRestaurants={noop} restaurants={restaurants} />,
     );
 
     expect(queryByText('Sushi Place')).not.toBeNull();
